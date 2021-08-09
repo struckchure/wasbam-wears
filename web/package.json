@@ -1,0 +1,29 @@
+{
+  "name": "hospital-ms",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chart.js": "^3.5.0",
+    "datatables.net-dt": "^1.1.0",
+    "jquery": "^3.6.0",
+    "path": "^0.12.7",
+    "vue": "^3.0.5",
+    "vue-chartjs": "^3.5.1",
+    "vue-router": "^4.0.10",
+    "vue3-chart-v2": "^0.8.2",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4",
+    "vite": "^2.4.2"
+  }
+}

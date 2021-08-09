@@ -1,0 +1,159 @@
+/* general  */
+
+.modal,
+.sidebar {
+	transition: .5s;
+	display: none;
+	background-color: transparent;
+	/*overflow: auto;*/
+	@apply z-40;
+}
+
+.cancel-button {
+	@apply
+		bg-transparent w-auto h-auto
+		px-2 py-1 hover:shadow-none
+		text-gray-400 hover:text-gray-500
+		transition duration-200 border-none;
+}
+
+/* modal  */
+
+.modal {
+	background-color: rgba(0, 0, 0, .5);
+	top: -100%;
+	@apply mx-auto p-0 w-full h-screen
+		px-10 md:px-20 py-10
+		md:py-20 fixed left-0
+		overflow-auto;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+	@apply px-4 py-2;
+}
+
+.modal-header,
+.modal-footer {
+	@apply h-10 bg-gray-100;
+	border-radius: inherit;
+}
+
+.modal-content {
+	@apply mx-auto shadow-lg
+		bg-white rounded-md
+		max-w-2xl w-full
+		md:w-auto h-auto mb-20;
+}
+
+.modal-header {
+	@apply flex flex-row items-center
+		justify-between rounded-b-none;
+}
+
+.modal-body {}
+
+.modal-footer {
+	@apply rounded-t-none;
+}
+
+/* card  */
+
+.card {
+	@apply bg-white rounded-md
+		px-4 py-2 my-1 shadow-lg
+		border-2 border-solid border-gray-100;
+}
+
+.card-group > .card {
+	@apply rounded-none my-0;
+}
+
+.card-group > .card:first-child {
+	@apply rounded-t-md border-b-0;
+}
+
+.card-group > .card:last-child {
+	@apply rounded-b-md border-t-0;
+}
+
+/* notifications  */
+
+.notification {
+	@apply w-full h-auto;
+}
+
+.notification-content {
+	@apply shadow-lg
+}
+
+.notification-content p {
+	word-break: break-all;
+	@apply truncate;
+}
+
+.notification-item {
+	height: auto;
+	@apply max-w-full card p-0 m-0;
+}
+
+/* calendar */
+
+.calendar {
+	@apply card shadow-sm h-auto max-h-full;
+}
+
+.calendar input {
+	@apply border-none appearance-none w-20 inline-block;
+}
+
+.calendar span {
+	@apply mx-1;
+}
+
+.month {
+	@apply flex items-center justify-between;
+}
+
+.month > button {
+	@apply w-10 h-10 rounded-md bg-transparent
+		text-blue-700 hover:bg-gray-200 hover:shadow-lg;
+}
+
+.calendar-label {
+	@apply p-2 m-1 rounded-full w-10
+		h-10 text-center;
+}
+
+.days-label,
+.days {
+	@apply grid grid-cols-7;
+}
+
+.days-label > label {
+	@apply uppercase calendar-label;
+}
+
+.days > label {
+	@apply bg-gray-200 calendar-label
+		transition duration-200 cursor-pointer;
+}
+
+.days > label:hover {
+	@apply bg-blue-700 text-white hover:shadow-lg;
+	transition: .5s;
+}
+
+/* sidebar  */
+
+.sidebar {
+	right: -100%;
+	@apply w-full h-screen fixed top-0
+		overflow-auto grid grid-rows-2;
+}
+
+.sidebar-content {
+	@apply w-3/4 md:w-1/4 bg-white h-full float-right
+		p-2 overflow-auto;
+}

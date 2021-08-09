@@ -1,0 +1,12 @@
+**/*migrations
+**/*__pycache__
+**/*dist
+**/*build
+**/*venv
+**/*media
+
+**/*.vscode
+
+*.pyc
+*.sqlite3
+*.sqlite3-journal
