@@ -1,0 +1,15 @@
+{
+	"DEV": {
+		"SECRET_KEY": "3p3q7t6i5-mrhk!q0*9azcch#zpre_u6c+=v(keq8_hh^k$k06",
+		"CORS_ORIGIN_WHITELIST": [
+			"http://localhost:8080"
+		],
+		"ALLOWED_HOSTS": ["*"]
+	},
+	"PROD": {
+		"SECRET_KEY": "3p3q7t6i5-mrhk!q0*9azcch#zpre_u6c+=v(keq8_hh^k$k06",
+		"CORS_ORIGIN_WHITELIST": [
+		],
+		"ALLOWED_HOSTS": []
+	}
+}
