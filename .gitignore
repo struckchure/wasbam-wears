@@ -4,6 +4,7 @@
 **/*build
 **/*venv
 **/*media
+**/*node_modules
 
 **/*.vscode
 
