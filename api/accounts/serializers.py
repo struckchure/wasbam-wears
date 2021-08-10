@@ -18,6 +18,11 @@ class UserSerializer(serializers.ModelSerializer):
             'date',
             'updated'
         ]
+        read_only_fields = [
+            'is_staff',
+            'is_superuser',
+            'is_active',
+        ]
 
 
 class RegisterSerializer(serializers.ModelSerializer):

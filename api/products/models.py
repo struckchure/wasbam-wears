@@ -9,7 +9,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255, blank=False)
     image = models.ImageField(upload_to=product_image_handler)
     description = models.TextField(blank=True)
-    amount = models.PositiveIntegerField(default=0)
+    price = models.PositiveIntegerField(default=0)
     slug = models.SlugField(max_length=60, blank=True, unique=True)
     date = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
@@ -24,7 +24,13 @@ class Product(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             slug = secrets.token_urlsafe(60)
-            while slug not in Product.objects.values_list('slug', flat=True):
+            slug_exits = Product.objects.filter(slug=slug).exists()
+
+            if not slug_exits:
                 self.slug = slug
 
         super(Product, self).save(*args, **kwargs)
+
+    def delete(self):
+        self.image.delete()
+        super(Product, self).delete()
