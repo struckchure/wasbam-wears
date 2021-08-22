@@ -1,8 +1,6 @@
 // sidebar
 
 export function open_sidebar (element) {
-	document.body.style.overflow = 'hidden'
-
 	const sidebar = document.querySelector(`#${element}`)
 
 	sidebar.style.display = 'block'
@@ -36,8 +34,6 @@ export function close_sidebar (element) {
 		},
 		1000
 	)
-
-	document.body.style.overflow = 'auto'
 }
 
 export function on_click_overlay (element) {

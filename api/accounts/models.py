@@ -9,7 +9,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     username = models.CharField(max_length=100, blank=False, unique=True)
-    email = models.EmailField(max_length=255, blank=True)
+    email = models.EmailField(max_length=255, null=True)
+    phone_number = models.CharField(max_length=15, blank=True)
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
@@ -30,3 +31,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def save(self, *args, **kwargs):
         super(User, self).save(*args, **kwargs)
+
+    def can_deliver(self):
+        if self.phone_number:
+            return True
+        return False

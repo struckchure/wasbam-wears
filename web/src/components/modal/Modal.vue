@@ -4,7 +4,7 @@
 			<div class="modal-header">
 				<div>
 					<slot name="header">
-						<b>{{ get_header }}</b>
+						<b class="text-gray-600">{{ get_header }}</b>
 					</slot>
 				</div>
 
@@ -42,10 +42,13 @@
 		props: [
 			'name',
 			'header',
-			'footer'
+			'footer',
+			'persistent'
 		],
 		mounted () {
-			on_click_overlay(this.get_name)
+			if (!this.get_persistent) {
+				on_click_overlay(this.get_name)
+			}
 		},
 		computed: {
 			get_name () {
@@ -56,6 +59,9 @@
 			},
 			get_footer () {
 				return this.footer
+			},
+			get_persistent () {
+				return this.persistent
 			}
 		},
 		methods: {

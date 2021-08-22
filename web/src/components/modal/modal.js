@@ -1,8 +1,6 @@
 // modal
 
 export function open_modal (element) {
-	document.body.style.overflow = 'hidden'
-
 	const modal = document.querySelector(`#${element}`)
 
 	modal.style.display = 'block'
@@ -36,8 +34,6 @@ export function close_modal (element) {
 		},
 		1000
 	)
-
-	document.body.style.overflow = 'auto'
 }
 
 export function on_click_overlay (element) {

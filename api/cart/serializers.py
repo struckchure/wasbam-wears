@@ -53,11 +53,10 @@ class CartItemUpdateSerializer(serializers.ModelSerializer):
 
     def validate_product(self, value):
         product = Product.objects.get(slug=value)
-        item_exists = CartItem.objects.filter(product=product).exists()
+        cart_item = CartItem.objects.filter(product=product)
+        item_exists = cart_item.exists()
 
         if item_exists:
-            raise serializers.ValidationError(
-                "Product already exist in your cart"
-            )
+            raise serializers.ValidationError("CART_ITEM_EXISTS")
 
         return product

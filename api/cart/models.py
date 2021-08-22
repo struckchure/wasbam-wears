@@ -1,6 +1,6 @@
 from django.db import models
-import secrets
 
+from wasbam_wears.utils import generate_slug
 from accounts.models import User
 from products.models import Product
 
@@ -8,7 +8,7 @@ from products.models import Product
 class CartItem(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.OneToOneField(Product, on_delete=models.SET_NULL, null=True)
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     slug = models.SlugField(max_length=60, blank=True, unique=True)
     date = models.DateTimeField(auto_now=True)
@@ -23,7 +23,7 @@ class CartItem(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            slug = secrets.token_urlsafe(60)
+            slug = generate_slug(60)
             slug_exits = CartItem.objects.filter(slug=slug).exists()
 
             if not slug_exits:

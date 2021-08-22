@@ -1,0 +1,60 @@
+// general
+
+export const TOGGLE_LOADING = 'TOGGLE_LOADING'
+export const SET_BUSY = 'SET_BUSY'
+export const SET_DONE = 'SET_DONE'
+export const SET_ERROR = 'SET_ERROR'
+export const CLEAR_ERROR = 'CLEAR_ERROR'
+
+// products
+
+export const CREATE_PRODUCT = 'CREATE_PRODUCT'
+export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
+export const DELETE_PRODUCT = 'DELETE_PRODUCT'
+
+export const GET_PRODUCTS = 'GET_PRODUCTS'
+export const SET_PRODUCTS = 'SET_PRODUCTS'
+
+// cart
+
+export const ADD_CART_ITEM = 'ADD_CART_ITEM'
+export const SET_CART_ITEM_EXISTS = 'SET_CART_ITEM_EXISTS'
+export const UPDATE_CART_ITEM = 'UPDATE_CART_ITEM'
+export const DELETE_CART_ITEM = 'DELETE_CART_ITEM'
+export const GET_CART_ITEM = 'GET_CART_ITEM'
+export const SET_CART_ITEM = 'SET_CART_ITEM'
+export const FILTER_CART_ITEM_BY_PRODUCT = 'FILTER_CART_ITEM_BY_PRODUCT'
+
+export const CHECKOUT_CART = 'CHECKOUT_CART'
+export const CHECKOUT_FAILED = 'CHECKOUT_FAILED'
+export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
+
+export const GET_CART = 'GET_CART'
+export const SET_CART = 'SET_CART'
+
+// accounts
+
+export const AUTH_LOGIN = 'AUTH_LOGIN'
+export const AUTH_LOGOUT = 'AUTH_LOGOUT'
+export const AUTH_REGISTER = 'AUTH_REGISTER'
+export const GET_USER = 'GET_USER'
+
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+export const AUTH_FAILED = 'AUTH_FAILED'
+
+// records
+
+export const CREATE_RECORD = 'CREATE_RECORD'
+export const GET_RECORDS = 'GET_RECORDS'
+export const SET_RECORDS = 'SET_RECORDS'
+
+export const CONFIRM_ORDER_RECIEVED = 'CONFIRM_ORDER_RECIEVED'
+export const DELETE_COMPLETED_ORDERS = 'DELETE_COMPLETED_ORDERS'
+
+// admin
+
+export const GET_ALL_RECORDS = 'GET_ALL_RECORDS'
+export const SET_ALL_RECORDS = 'SET_ALL_RECORDS'
+
+export const GET_USER_RECORDS ='GET_USER_RECORDS'
+export const SET_USER_RECORDS ='SET_USER_RECORDS'

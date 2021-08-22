@@ -2,6 +2,7 @@ from rest_framework.generics import GenericAPIView as View
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 
@@ -11,6 +12,30 @@ from accounts.serializers import (
     RegisterSerializer,
     LoginSerializer
 )
+
+
+class UserDetailAPI(View):
+
+    permission_classes = [
+        IsAuthenticated
+    ]
+    serializer_class = UserSerializer
+
+    def get(self, request):
+        user = User.objects.get(username=request.user.username)
+        user_serializer = self.get_serializer(user)
+
+        token, _ = Token.objects.get_or_create(
+            user=user
+        )
+
+        response = Response(
+            {
+                'user': user_serializer.data,
+                'token': token.key
+            }
+        )
+        return response
 
 
 class RegisterAPI(View):

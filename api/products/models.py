@@ -1,6 +1,6 @@
 from django.db import models
-import secrets
 
+from wasbam_wears.utils import generate_slug
 from products.handlers import product_image_handler
 
 
@@ -23,7 +23,7 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            slug = secrets.token_urlsafe(60)
+            slug = generate_slug(60)
             slug_exits = Product.objects.filter(slug=slug).exists()
 
             if not slug_exits:
