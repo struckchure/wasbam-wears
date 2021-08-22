@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const DEBUG_MODE = process.env.NODE_ENV
 const DEVELOPMENT_URL = "http://localhost:8000"
-const PRODUCTION_URL = "http://172.104.229.18/"
+const PRODUCTION_URL = "http://18.132.196.171:8000/"
 
 let API_URL;
 
